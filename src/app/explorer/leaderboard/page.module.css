@@ -1,42 +1,47 @@
 .crumb {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
 }
 
 .heroTag {
-  display: inline-block;
-  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
   border: 1px solid var(--accent);
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
   width: max-content;
   margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(248, 149, 32, 0.06);
 }
 
 .heroTitle {
   font-family: var(--font-display);
   font-size: clamp(28px, 4.4vw, 44px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--fg);
   margin: 0 0 6px;
   text-transform: uppercase;
 }
 
 .heroLead {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-body);
   font-size: 14px;
   color: var(--muted);
   margin: 0 0 24px;
-  max-width: 56ch;
+  max-width: 60ch;
+  line-height: 1.5;
 }
 
 .filterBar {
@@ -44,36 +49,41 @@
   flex-wrap: wrap;
   gap: 8px;
   padding: 0 0 18px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   margin-bottom: 18px;
 }
 
 .chip {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 7px 12px;
   color: var(--muted);
+  background: var(--panel);
   border: 1px solid var(--line);
   text-decoration: none;
   transition: color 0.15s, border-color 0.15s, background 0.15s;
-  border-radius: 2px;
+  border-radius: var(--radius-sm);
 }
 
 .chip:hover {
   color: var(--fg);
-  border-color: var(--muted);
+  border-color: var(--panel-2);
+  background: var(--panel-2);
 }
 
 .chipActive {
-  color: var(--bg);
+  color: #000;
   background: var(--accent);
   border-color: var(--accent);
 }
 
 .chipActive:hover {
-  color: var(--bg);
+  color: #000;
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .table {
@@ -83,18 +93,22 @@
   font-variant-numeric: tabular-nums;
   font-size: 13px;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.4);
+  background: var(--panel);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .table thead th {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: left;
   padding: 12px 14px;
   border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
 }
 
 .table tbody tr {
@@ -103,12 +117,12 @@
 }
 
 .table tbody tr:hover {
-  background: var(--bg-2);
+  background: var(--panel-2);
 }
 
 .table tbody td {
   padding: 12px 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   color: var(--fg);
 }
 
@@ -121,9 +135,10 @@
 }
 
 .rank {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 13px;
-  letter-spacing: 0.06em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   color: var(--muted);
   width: 48px;
 }
@@ -139,8 +154,9 @@
 }
 
 .playerNick {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 14px;
+  font-weight: 600;
   color: var(--fg);
   text-decoration: none;
 }
@@ -159,6 +175,7 @@
 
 .mvpScore {
   color: var(--accent);
+  font-weight: 700;
 }
 
 .empty {
@@ -167,8 +184,10 @@
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.4);
+  background: var(--panel);
+  border-radius: var(--radius-md);
 }

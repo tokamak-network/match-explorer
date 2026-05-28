@@ -56,6 +56,19 @@ export function SearchBar({ initialQuery = "" }: Props) {
         method="get"
         onSubmit={() => setOpen(false)}
       >
+        <svg
+          className={styles.searchIcon}
+          aria-hidden
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
         <input
           name="q"
           value={q}
@@ -64,12 +77,12 @@ export function SearchBar({ initialQuery = "" }: Props) {
             setOpen(true);
           }}
           onFocus={() => setOpen(true)}
-          placeholder="Search by hash / address / nickname / map"
+          placeholder="Search collections, players, matches"
           className={styles.input}
           autoComplete="off"
           spellCheck={false}
         />
-        <span className={styles.icon}>↵</span>
+        <kbd className={styles.kbd}>⌘K</kbd>
       </form>
       {open && q.trim() && hits ? (
         <div className={styles.drop}>

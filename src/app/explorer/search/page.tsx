@@ -35,7 +35,6 @@ export default async function SearchPage({ searchParams }: { searchParams: Searc
       <div className={styles.crumb}>
         <Link href="/explorer">Explorer</Link> · Search
       </div>
-      <span className={styles.heroTag}>[ search ]</span>
       <h1 className={styles.heroTitle}>
         Results for<span className={styles.q}>“{q}”</span>
       </h1>
@@ -112,7 +111,6 @@ async function EmptyState() {
       <div className={styles.crumb}>
         <Link href="/explorer">Explorer</Link> · Search
       </div>
-      <span className={styles.heroTag}>[ search ]</span>
       <h1 className={styles.heroTitle}>Start searching.</h1>
       <p className={styles.heroLead}>
         Look up a match hash, a player address, a nickname, or a map. Here are a few examples

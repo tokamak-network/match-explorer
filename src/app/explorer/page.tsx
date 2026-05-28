@@ -1,13 +1,12 @@
 import Link from "next/link";
 import {
-  MODE_LABEL,
-  formatDuration,
   formatNumber,
   formatPct,
   repo,
   truncateHex,
 } from "@/lib/explorer";
 import { MatchTable } from "./components/MatchTable";
+import { SearchTrigger } from "./components/SearchTrigger";
 import { StatCard } from "./components/StatCard";
 import styles from "./page.module.css";
 
@@ -16,42 +15,40 @@ export const dynamic = "force-static";
 export default async function ExplorerOverview() {
   const [stats, latest, leaders] = await Promise.all([
     repo.getOverviewStats(),
-    repo.getLatestMatches({ pageSize: 10 }),
-    repo.getLeaderboard({ pageSize: 5 }),
+    repo.getLatestMatches({ pageSize: 13 }),
+    repo.getLeaderboard({ pageSize: 10 }),
   ]);
 
   return (
     <>
-      <section className={styles.hero}>
-        <span className={styles.heroTag}>[ explorer.v1 — fixture ]</span>
-        <h1 className={styles.heroTitle}>PvP on-chain ledger.</h1>
-        <p className={styles.heroLead}>
-          Every duel, deathmatch, and gladiator round — recorded as composable data.
-          Browse matches, inspect players, and follow the meta as it forms.
-        </p>
+      <section className={styles.heroSearch}>
+        <SearchTrigger />
       </section>
 
       <section className={styles.stats}>
         <StatCard
           label="Total matches"
           value={formatNumber(stats.totalMatches)}
-          sublabel={`Across ${stats.totalPlayers} ranked players`}
-          accent
+          sublabel="In ledger"
         />
         <StatCard
-          label="Matches · 24h"
-          value={formatNumber(stats.matches24h)}
-          sublabel="Recent activity"
+          label="Unique players"
+          value={formatNumber(stats.totalPlayers)}
+          sublabel="Ranked addresses"
         />
         <StatCard
-          label="Avg. match length"
-          value={formatDuration(stats.avgMatchSec)}
-          sublabel="Across all modes"
+          label="Best streak · 24h"
+          value={stats.bestStreak ? `${stats.bestStreak.wins}W` : "—"}
+          sublabel={stats.bestStreak ? stats.bestStreak.nickname : "No data"}
         />
         <StatCard
-          label="Top mode"
-          value={MODE_LABEL[stats.topMode]}
-          sublabel="By match count"
+          label="Top player · 24h"
+          value={stats.topPlayerToday?.nickname ?? "—"}
+          sublabel={
+            stats.topPlayerToday
+              ? `MVP ${stats.topPlayerToday.mvpScore.toFixed(1)} · ${stats.topPlayerToday.matches} matches`
+              : "No data"
+          }
         />
       </section>
 
@@ -59,8 +56,8 @@ export default async function ExplorerOverview() {
         <section className={styles.section}>
           <header className={styles.sectionHead}>
             <h2 className={styles.sectionTitle}>Latest matches</h2>
-            <Link className={styles.sectionLink} href="/explorer/leaderboard">
-              View all leaderboards →
+            <Link className={styles.sectionLink} href="/explorer/matches">
+              View all matches →
             </Link>
           </header>
           <MatchTable matches={latest.items} />
@@ -74,22 +71,29 @@ export default async function ExplorerOverview() {
             </Link>
           </header>
           <div className={styles.topPlayers}>
-            {leaders.items.map((p) => (
-              <Link
-                key={p.address}
-                href={`/explorer/address/${p.address}`}
-                className={styles.topPlayerRow}
-              >
-                <span className={styles.topRank}>#{p.rank.toString().padStart(2, "0")}</span>
-                <span>
-                  <span className={styles.topNick}>{p.nickname}</span>
-                  <span className={styles.topNickSub}>
-                    {truncateHex(p.address)} · {p.matches} matches · {formatPct(p.winRate, 0)} WR · {p.kd.toFixed(2)} K/D
+            <div className={styles.topPlayersHeader}>
+              <span>Rank</span>
+              <span>Player</span>
+              <span className={styles.topPlayersHeaderNum}>MVP</span>
+            </div>
+            <div className={styles.topPlayersBody}>
+              {leaders.items.map((p) => (
+                <Link
+                  key={p.address}
+                  href={`/explorer/address/${p.address}`}
+                  className={styles.topPlayerRow}
+                >
+                  <span className={styles.topRank}>#{p.rank.toString().padStart(2, "0")}</span>
+                  <span>
+                    <span className={styles.topNick}>{p.nickname}</span>
+                    <span className={styles.topNickSub}>
+                      {truncateHex(p.address)} · {p.matches} matches · {formatPct(p.winRate, 0)} WR · {p.kd.toFixed(2)} K/D
+                    </span>
                   </span>
-                </span>
-                <span className={styles.topScore}>{p.mvpScore.toFixed(1)}</span>
-              </Link>
-            ))}
+                  <span className={styles.topScore}>{p.mvpScore.toFixed(1)}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
       </div>

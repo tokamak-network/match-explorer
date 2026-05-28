@@ -1,7 +1,8 @@
 .crumb {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
@@ -24,30 +25,21 @@
 }
 
 .identityCard {
-  border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.6);
+  border: 1px solid var(--accent);
+  background: linear-gradient(180deg, rgba(248, 149, 32, 0.08), rgba(248, 149, 32, 0.02)), var(--panel);
   padding: 22px 24px;
   display: flex;
   flex-direction: column;
   gap: 14px;
   position: relative;
-}
-
-.identityCard::before {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: -1px;
-  width: 22px;
-  height: 22px;
-  border-top: 1px solid var(--accent);
-  border-left: 1px solid var(--accent);
+  border-radius: var(--radius-md);
 }
 
 .identityKind {
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
 }
@@ -55,11 +47,11 @@
 .identityNick {
   font-family: var(--font-display);
   font-size: 36px;
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--fg);
   margin: 0;
-  line-height: 1;
+  line-height: 1.1;
   text-transform: uppercase;
 }
 
@@ -82,16 +74,18 @@
 .metaK {
   display: block;
   color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 0.22em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
 }
 
 .metaV {
   display: block;
   margin-top: 4px;
   color: var(--fg);
+  font-weight: 700;
 }
 
 .statGrid {
@@ -111,23 +105,27 @@
   font-variant-numeric: tabular-nums;
   font-size: 13px;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.4);
+  background: var(--panel);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .byMode thead th {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: left;
   padding: 10px 14px;
   border-bottom: 1px solid var(--line);
+  background: var(--bg-2);
 }
 
 .byMode tbody td {
   padding: 10px 14px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   color: var(--fg);
 }
 
@@ -150,15 +148,15 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   padding-bottom: 10px;
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg);
   margin: 0;

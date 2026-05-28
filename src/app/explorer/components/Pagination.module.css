@@ -20,20 +20,23 @@
 .disabled {
   display: inline-flex;
   align-items: center;
-  padding: 6px 12px;
+  padding: 7px 14px;
+  background: var(--panel);
   border: 1px solid var(--line);
   color: var(--fg);
   text-decoration: none;
   font-size: 11px;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  transition: border-color 0.15s, color 0.15s;
-  border-radius: 2px;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  border-radius: var(--radius-sm);
 }
 
 .link:hover {
   border-color: var(--accent);
   color: var(--accent);
+  background: rgba(248, 149, 32, 0.06);
 }
 
 .disabled {
@@ -46,6 +49,7 @@
 .position {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
+  font-weight: 700;
   color: var(--fg);
   padding: 0 8px;
 }

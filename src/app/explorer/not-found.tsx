@@ -16,20 +16,25 @@ export default function NotFound() {
       <div
         style={{
           fontFamily: "var(--font-mono)",
-          fontSize: 11,
-          letterSpacing: "0.22em",
+          fontSize: 10,
+          fontWeight: 700,
+          letterSpacing: "0.1em",
           textTransform: "uppercase",
           color: "var(--accent)",
+          padding: "5px 10px",
+          border: "1px solid var(--accent)",
+          borderRadius: "var(--radius-sm)",
+          background: "rgba(248, 149, 32, 0.06)",
         }}
       >
-        [ 404 · not found ]
+        404 · NOT FOUND
       </div>
       <h2
         style={{
           fontFamily: "var(--font-display)",
           fontSize: 36,
-          fontWeight: 900,
-          letterSpacing: "-0.02em",
+          fontWeight: 700,
+          letterSpacing: "0.02em",
           margin: 0,
           color: "var(--fg)",
           textTransform: "uppercase",
@@ -39,11 +44,11 @@ export default function NotFound() {
       </h2>
       <p
         style={{
-          fontFamily: "var(--font-serif)",
-          fontStyle: "italic",
+          fontFamily: "var(--font-body)",
           color: "var(--muted)",
           margin: 0,
           maxWidth: 420,
+          lineHeight: 1.5,
         }}
       >
         That hash, address, or page does not exist in the current ledger. Try a search,
@@ -54,14 +59,15 @@ export default function NotFound() {
           href="/explorer"
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: 11,
-            letterSpacing: "0.18em",
+            fontSize: 12,
+            fontWeight: 700,
+            letterSpacing: "0.08em",
             textTransform: "uppercase",
-            color: "var(--fg)",
-            border: "1px solid var(--accent)",
-            padding: "8px 14px",
+            color: "#000",
+            background: "var(--accent)",
+            padding: "10px 16px",
             textDecoration: "none",
-            borderRadius: 2,
+            borderRadius: "var(--radius-sm)",
           }}
         >
           ← Back to overview

@@ -29,12 +29,7 @@ export default async function LeaderboardPage({ searchParams }: { searchParams: 
 
   return (
     <>
-      <div className={styles.crumb}>
-        <Link href="/explorer">Explorer</Link> · Leaderboard
-      </div>
-
       <section>
-        <span className={styles.heroTag}>[ ranks · all-time ]</span>
         <h1 className={styles.heroTitle}>Leaderboard.</h1>
         <p className={styles.heroLead}>
           Ranked by MVP score — a composite of kills, assists, win contribution, and damage.

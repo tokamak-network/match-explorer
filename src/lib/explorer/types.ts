@@ -178,9 +178,13 @@ export type Page<T> = {
 export type OverviewStats = {
   totalMatches: number;
   totalPlayers: number;
-  matches24h: number;
-  avgMatchSec: number;
-  topMode: GameMode;
+  bestStreak: { address: Address; nickname: string; wins: number } | null;
+  topPlayerToday: {
+    address: Address;
+    nickname: string;
+    mvpScore: number;
+    matches: number;
+  } | null;
 };
 
 export interface ExplorerRepo {

@@ -1,7 +1,8 @@
 .crumb {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
@@ -13,38 +14,43 @@
 }
 
 .heroTag {
-  display: inline-block;
-  padding: 4px 10px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
   border: 1px solid var(--accent);
   font-family: var(--font-mono);
   font-size: 10px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(248, 149, 32, 0.06);
 }
 
 .heroTitle {
   font-family: var(--font-display);
   font-size: clamp(28px, 4vw, 40px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
   color: var(--fg);
   margin: 0 0 6px;
   text-transform: uppercase;
 }
 
 .heroLead {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-body);
   color: var(--muted);
   margin: 0 0 24px;
-  max-width: 56ch;
+  max-width: 60ch;
+  line-height: 1.5;
 }
 
 .q {
   font-family: var(--font-mono);
   color: var(--accent);
+  font-weight: 700;
   padding: 0 6px;
 }
 
@@ -56,13 +62,14 @@
 }
 
 .groupTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin: 0 0 6px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   padding-bottom: 8px;
 }
 
@@ -72,17 +79,18 @@
   gap: 16px;
   padding: 12px 14px;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.4);
+  background: var(--panel);
   font-family: var(--font-mono);
   font-size: 13px;
   color: var(--fg);
   text-decoration: none;
   transition: border-color 0.15s, background 0.15s;
+  border-radius: var(--radius-sm);
 }
 
 .row:hover {
   border-color: var(--accent);
-  background: var(--bg-2);
+  background: var(--panel-2);
 }
 
 .rowMain {
@@ -95,14 +103,16 @@
 .rowMeta {
   color: var(--muted);
   font-size: 11px;
-  letter-spacing: 0.12em;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   align-self: center;
 }
 
 .nick {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 13px;
+  font-weight: 600;
   color: var(--fg);
 }
 
@@ -112,10 +122,12 @@
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 12px;
-  letter-spacing: 0.14em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.4);
+  background: var(--panel);
+  border-radius: var(--radius-md);
 }
 
 .examples {
@@ -126,9 +138,10 @@
 }
 
 .exampleHeader {
-  font-family: var(--font-display);
+  font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 4px;

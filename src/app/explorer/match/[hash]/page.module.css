@@ -1,7 +1,8 @@
 .crumb {
   font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 0.18em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
@@ -20,13 +21,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   border: 1px solid var(--line);
-  background: rgba(15, 19, 27, 0.6);
+  background: var(--panel);
+  border-radius: var(--radius-md);
+  overflow: hidden;
 }
 
 .cell {
   padding: 14px 16px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
   min-width: 0;
 }
 
@@ -34,17 +37,16 @@
   border-right: none;
 }
 
-/* last row: remove bottom border on rendered last row regardless of count */
 .cellLastRow {
   border-bottom: none;
 }
 
 .k {
   display: block;
-  font-family: var(--font-display);
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -54,7 +56,7 @@
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   color: var(--fg);
   margin-top: 6px;
   word-break: break-all;
@@ -64,7 +66,7 @@
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 700;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
   color: var(--fg);
 }
 
@@ -79,15 +81,15 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  border-bottom: 1px solid var(--line);
+  border-bottom: 1px solid var(--line-soft);
   padding-bottom: 10px;
 }
 
 .sectionTitle {
-  font-family: var(--font-display);
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--fg);
   margin: 0;
@@ -102,7 +104,7 @@
 @media (max-width: 880px) {
   .headBlock { grid-template-columns: 1fr 1fr; }
   .cell:nth-child(2n) { border-right: none; }
-  .cell:nth-child(4n) { border-right: 1px solid var(--line); }
+  .cell:nth-child(4n) { border-right: 1px solid var(--line-soft); }
   .cell:nth-child(2n) { border-right: none; }
   .weaponGrid { grid-template-columns: 1fr; }
 }

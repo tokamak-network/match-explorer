@@ -35,26 +35,61 @@ export class FixtureRepo implements ExplorerRepo {
     const matches = this.fx.matches;
     const newest = matches[0]?.startedAt ?? 0;
     const cutoff = newest - 86400;
-    const matches24h = matches.filter((m) => m.startedAt >= cutoff).length;
-    const avgMatchSec = matches.length
-      ? Math.round(matches.reduce((s, m) => s + m.durationSec, 0) / matches.length)
-      : 0;
-    const modeCounts = new Map<GameMode, number>();
-    for (const m of matches) modeCounts.set(m.mode, (modeCounts.get(m.mode) ?? 0) + 1);
-    let topMode: GameMode = "DEATHMATCH_TEAM";
-    let topCount = -1;
-    for (const [mode, count] of modeCounts) {
-      if (count > topCount) {
-        topCount = count;
-        topMode = mode;
+
+    let bestStreak: OverviewStats["bestStreak"] = null;
+    let topPlayerToday: OverviewStats["topPlayerToday"] = null;
+
+    for (const player of this.fx.players) {
+      const today = (this.fx.matchesByAddress.get(player.address) ?? [])
+        .filter((m) => m.startedAt >= cutoff);
+      if (today.length === 0) continue;
+
+      // longest consecutive win streak inside today's matches (newest first)
+      const orderedNewestFirst = [...today].sort((a, b) => b.startedAt - a.startedAt);
+      let longest = 0;
+      let current = 0;
+      for (const m of orderedNewestFirst) {
+        const part = m.participants.find((p) => p.address === player.address);
+        if (part?.isWinner) {
+          current += 1;
+          if (current > longest) longest = current;
+        } else {
+          current = 0;
+        }
+      }
+      if (longest > 0 && (!bestStreak || longest > bestStreak.wins)) {
+        bestStreak = { address: player.address, nickname: player.nickname, wins: longest };
+      }
+
+      // best avg MVP score among today's matches
+      let total = 0;
+      for (const m of today) {
+        const p = m.participants.find((x) => x.address === player.address);
+        if (!p) continue;
+        total +=
+          p.kills * 1.0
+          + p.assists * 0.4
+          - p.deaths * 0.6
+          + (p.isMvp ? 8 : 0)
+          + (p.isWinner ? 4 : 0)
+          + p.damageDealt / 1000;
+      }
+      const avg = Math.round((total / today.length) * 10) / 10;
+      if (!topPlayerToday || avg > topPlayerToday.mvpScore) {
+        topPlayerToday = {
+          address: player.address,
+          nickname: player.nickname,
+          mvpScore: avg,
+          matches: today.length,
+        };
       }
     }
+
     return {
       totalMatches: matches.length,
       totalPlayers: this.fx.players.length,
-      matches24h,
-      avgMatchSec,
-      topMode,
+      bestStreak,
+      topPlayerToday,
     };
   }
 

@@ -132,7 +132,7 @@ export default async function PlayerPage({
         />
       </section>
 
-      <p style={{ fontFamily: "var(--font-serif)", fontStyle: "italic", fontSize: 13, color: "var(--muted)", margin: 0, maxWidth: "60ch" }}>
+      <p style={{ fontFamily: "var(--font-body)", fontSize: 13, color: "var(--muted)", margin: 0, maxWidth: "60ch", lineHeight: 1.5 }}>
         Inspecting a player profile is read-only. Profile data updates as new matches land in the
         ledger — composable, replayable, and addressable by anyone.
       </p>
