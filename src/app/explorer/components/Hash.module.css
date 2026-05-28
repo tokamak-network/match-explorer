@@ -1,0 +1,25 @@
+.hash {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--fg);
+  letter-spacing: 0;
+}
+
+.link {
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.row {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}

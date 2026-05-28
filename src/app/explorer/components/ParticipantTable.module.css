@@ -1,0 +1,115 @@
+.wrap {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: rgba(15, 19, 27, 0.4);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+
+.table thead th {
+  font-family: var(--font-display, var(--font-mono));
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th.num,
+.table tbody td.num {
+  text-align: right;
+}
+
+.teamHeader td {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(255, 91, 61, 0.05);
+  padding: 8px 14px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.teamScore {
+  float: right;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  letter-spacing: 0;
+}
+
+.table tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.nickname {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nicknameText {
+  font-family: var(--font-display);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nicknameText:hover {
+  color: var(--accent);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  border-radius: 2px;
+}
+
+.pillWin {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(255, 91, 61, 0.08);
+}
+
+.pillMvp {
+  background: var(--accent-2);
+  color: #07090d;
+  font-weight: 700;
+  border-color: var(--accent-2);
+}
+
+.placement {
+  font-family: var(--font-mono);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  min-width: 18px;
+  display: inline-block;
+}

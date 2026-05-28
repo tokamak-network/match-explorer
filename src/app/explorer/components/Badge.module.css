@@ -1,0 +1,52 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px 3px 10px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--fg);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  border-radius: 2px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.badge::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  background: var(--badge-stripe, var(--accent));
+}
+
+.sm {
+  padding: 2px 6px 2px 8px;
+  font-size: 10px;
+}
+
+/* mode stripes */
+.modeDmSolo { --badge-stripe: #ff5b3d; }
+.modeDmTeam { --badge-stripe: #ff8a3d; }
+.modeGlSolo { --badge-stripe: #ffd166; }
+.modeGlTeam { --badge-stripe: #f0c14b; }
+.modeAsn    { --badge-stripe: #c576ff; }
+.modeBrk    { --badge-stripe: #ff3d6a; }
+.modeDuel   { --badge-stripe: #3dd6ff; }
+
+/* weapon class stripes */
+.classMelee  { --badge-stripe: #ffd166; }
+.classPistol { --badge-stripe: #9ed5ff; }
+.classSmg    { --badge-stripe: #3dd6ff; }
+.classShotgun{ --badge-stripe: #ff8a3d; }
+.classRifle  { --badge-stripe: #ff5b3d; }
+.classMg     { --badge-stripe: #ff3d6a; }
+.classRpg    { --badge-stripe: #c576ff; }
+
+.map { --badge-stripe: #8a93a4; }
