@@ -1,0 +1,174 @@
+.crumb {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.heroTag {
+  display: inline-block;
+  padding: 4px 10px;
+  border: 1px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  width: max-content;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4.4vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.heroLead {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 24px;
+  max-width: 56ch;
+}
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 18px;
+}
+
+.chip {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  border-radius: 2px;
+}
+
+.chip:hover {
+  color: var(--fg);
+  border-color: var(--muted);
+}
+
+.chipActive {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.chipActive:hover {
+  color: var(--bg);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  border: 1px solid var(--line);
+  background: rgba(15, 19, 27, 0.4);
+}
+
+.table thead th {
+  font-family: var(--font-display);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.table tbody tr {
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.table tbody tr:hover {
+  background: var(--bg-2);
+}
+
+.table tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.num {
+  text-align: right;
+}
+
+.rank {
+  font-family: var(--font-display);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  width: 48px;
+}
+
+.rankTop {
+  color: var(--accent);
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.playerNick {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.playerNick:hover {
+  color: var(--accent);
+}
+
+.tdLink {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  margin: -12px -14px;
+  padding: 12px 14px;
+}
+
+.mvpScore {
+  color: var(--accent);
+}
+
+.empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  background: rgba(15, 19, 27, 0.4);
+}
