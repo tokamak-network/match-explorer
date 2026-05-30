@@ -41,7 +41,7 @@
 
 .input:focus {
   border-color: var(--accent);
-  background: #0d0d0d;
+  background: var(--panel);
 }
 
 .kbd {
@@ -80,7 +80,7 @@
 
 .triggerBtn:hover {
   border-color: var(--panel-2);
-  background: #0d0d0d;
+  background: var(--bg-2);
 }
 
 .triggerLabel {
@@ -96,7 +96,7 @@
   right: 0;
   background: var(--panel);
   border: 1px solid var(--line);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
   max-height: 360px;
   overflow-y: auto;
   z-index: 50;

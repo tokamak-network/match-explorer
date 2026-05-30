@@ -1,6 +1,6 @@
-# Match Explorer
+# RIVAI Explorer
 
-Etherscan-like explorer for **GunZ PvP** match data. Designed so the same UI can read from a fixture today and from an on-chain match ledger tomorrow.
+Etherscan-like explorer for **PvP** match data. Designed so the same UI can read from a fixture today and from an on-chain match ledger tomorrow.
 
 ## Stack
 

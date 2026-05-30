@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ReactNode } from "react";
 import { Inter, Space_Mono } from "next/font/google";
 import { SearchModal } from "./components/SearchModal";
@@ -26,9 +27,9 @@ const mono = Space_Mono({
 });
 
 export const metadata = {
-  title: "GunZ Explorer · PvP On-Chain Ledger",
+  title: "RIVAI Explorer · PvP On-Chain Ledger",
   description:
-    "Browse GunZ PvP matches, player profiles, and leaderboards. Composable PvP data, indexed for the open arena.",
+    "Browse PvP matches, player profiles, and leaderboards. Composable PvP data, indexed for the open arena.",
 };
 
 export default function ExplorerLayout({ children }: { children: ReactNode }) {
@@ -37,8 +38,16 @@ export default function ExplorerLayout({ children }: { children: ReactNode }) {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link href="/explorer" className={styles.brand}>
-            <span className={styles.brandLogo} aria-hidden>◆</span>
-            <span className={styles.brandMark}>GunZ Explorer</span>
+            <Image
+              src="/logo.png"
+              alt=""
+              width={1158}
+              height={432}
+              className={styles.brandLogo}
+              priority
+              aria-hidden
+            />
+            <span className={styles.brandMark}>RIVAI Explorer</span>
           </Link>
           <nav className={styles.nav}>
             <Link href="/explorer/matches" className={styles.navLink}>Matches</Link>

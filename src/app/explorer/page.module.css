@@ -17,7 +17,7 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(244, 245, 247, 0.92);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -42,16 +42,10 @@
 }
 
 .brandLogo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  background: var(--accent);
-  color: #000;
-  font-size: 16px;
-  font-weight: 700;
-  border-radius: var(--radius-sm);
+  width: auto;
+  height: 15px;
+  object-fit: contain;
+  display: block;
 }
 
 .brandMark {
